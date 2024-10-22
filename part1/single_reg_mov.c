@@ -21,8 +21,11 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
+	char file_contents[20];
+	fread(file_contents, 1, 2, fp);
+
 	char asm_instructions[20];
-	decodeSingleRegMov(15, asm_instructions);
+	decodeSingleRegMov(file_contents, asm_instructions);
 
 	fclose(fp);
 
